@@ -10,8 +10,7 @@ class BKPowerSupply:
 
         # Verify that this is a supported BK power supply
         id_string = self.instr.query('*IDN?').split(",")
-        print(id_string)
-        if 'B&K PRECISION' in id_string[0]:
+        if 'B&K PRECISION' in id_string[0].upper():
             if '9172' in id_string[1]:
                 self.model = '9172'
             elif '1697B' in id_string[1]:
